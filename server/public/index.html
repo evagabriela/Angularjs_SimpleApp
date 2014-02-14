@@ -2,7 +2,7 @@
 <head>
   <title>Demo</title>
   <script type="text/javascript" src="js/lib/angular.min.js"></script>
-  <script type="text/javascript" src="js/lib/angular-resouce.min.js"></script>
+  <script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
   <script type="text/javascript" src="js/controllers/app.js"></script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
@@ -10,16 +10,13 @@
 <body>
   <div class = "container" ng-controller="AppCtrl">
     <h1>Airports Project</h1>
-
-    <ul ng-repeat="airport in airports">
-      <li ng-repeat = "airport in airports">{{airport.code}} - {{airport.city | uppercase}} </li>
+    <ul>
+      <li ng-repeat="airport in airports">
+      <a href="" ng-click="setAirport(airport.code)">{{airport.code}} - {{airport.city}} </a>
+      </li>
     </ul>
 
-    <p>{{'128' | currency}}</p>
-
-    <p>{{airports | json}}</p>
-
+    <p ng-show="currentAirport">Current airport: {{currentAirport.name}}</p>
   </div>
-
 </body>
 </html> 
