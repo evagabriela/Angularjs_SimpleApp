@@ -12,15 +12,12 @@
     <h1>Airports Project</h1>
 
     <ul ng-repeat="airport in airports">
-      <li>{{airport.code}}</li>
-      <li>{{airport.city}}</li>
-      <li>{{airport.name}}</li>
+      <li ng-repeat = "airport in airports">{{airport.code}} - {{airport.city | uppercase}} </li>
     </ul>
 
-    <ul>
-      <li ng-repeat="airport in airports">{{airport.code}}</li>
+    <p>{{'128' | currency}}</p>
 
-    </ul>
+    <p>{{airports | json}}</p>
 
   </div>
 
